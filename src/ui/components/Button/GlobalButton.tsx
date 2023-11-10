@@ -7,6 +7,8 @@ type ButtonProps = {
   onPress?: () => void;
   bgColor: string;
   textColor: string;
+  marginHorizontal: number;
+  paddingVertical: number;
 };
 
 const GlobalButton: React.FunctionComponent<ButtonProps> = ({
@@ -14,11 +16,20 @@ const GlobalButton: React.FunctionComponent<ButtonProps> = ({
   onPress,
   bgColor,
   textColor,
+  marginHorizontal,
+  paddingVertical,
 }) => {
   return (
     <Pressable
       onPress={onPress}
-      style={[styles.container, {backgroundColor: bgColor}]}>
+      style={[
+        styles.container,
+        {
+          backgroundColor: bgColor,
+          marginHorizontal: marginHorizontal,
+          paddingVertical: paddingVertical,
+        },
+      ]}>
       <Text style={[styles.text, {color: textColor}]}>{children}</Text>
     </Pressable>
   );
@@ -30,6 +41,8 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 10,
+    marginBottom: 10,
   },
   text: {},
 });

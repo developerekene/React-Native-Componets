@@ -9,6 +9,8 @@ const AppEntry: React.FunctionComponent = () => {
         children={'Click me'}
         bgColor={'#05014a'}
         textColor={'#ffffff'}
+        marginHorizontal={10}
+        paddingVertical={10}
       />
     </SafeAreaView>
   );
